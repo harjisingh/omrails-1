@@ -1,9 +1,18 @@
-  <tr>
-  	
-    <td><%= pin.description %></td>
-    <td><%= link_to 'Show', pin %></td>
-    <% if current_user == pin.user %>
-    <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
-    <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
-  </tr>
+
+
+ 
+            <div class="span3  well">
+              <h2><%= link_to pin.description, pin %></h2>
+              <% if current_user == pin.user %>
+              <h5>by <%= link_to pin.user.name, root_path %></h5>
+              <% else %>
+              <h5>by <%= link_to pin.user.name, pin.user %></h5>
+              <% end %>
+              <p>Example of an idea! </p>
+              <% if current_user == pin.user %>
+              <%# link_to 'Edit', edit_pin_path(pin), class: "btn btn-info" %>
+
+             <%# link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+              <% end %>
+            </div>
+            
