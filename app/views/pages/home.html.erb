@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
 <div class="hero-unit">
-<h1>Welcome to Three Cogs!</h1>
+<h1>Welcome <%= current_user.name %></h1>
 <p>
 	You found the home page for the
 	<%= link_to "One Month Rails", "http://onemonthrails.com" %> application
@@ -8,6 +8,7 @@
 <p>Your Logged In!</p>
 <p><%= link_to 'Thankyou <i class="icon-ok-circle icon-white"></i>'.html_safe, "#", class: "btn btn-primary btn-large" %></p>
 </div>
+
 <% else %>
 <div class="hero-unit">
 <h1>Welcome to Three Cogs!</h1>

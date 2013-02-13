@@ -1,2 +1,7 @@
 <p>Single User Will Be Here</p>
 <p><%= @user.email %></p>
+
+
+<% @user.pins.each do |pin| %>
+<p><%= pin.description %></p>
+<% end %>
