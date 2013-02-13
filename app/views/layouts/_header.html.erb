@@ -19,6 +19,8 @@
     	<ul class="nav">
     		<li><%= link_to '<i class="icon-home"></i> Home'.html_safe, root_path %></li>
     		<li><%= link_to '<i class="icon-heart"></i> About'.html_safe, about_path %><li>
+                <% if user_signed_in? %>
+             <li><%= link_to '<i class="icon-user"></i> All Cogs'.html_safe, users_path %><li><% end %>
 		</ul>
 		<ul class="nav pull-right">
             <% if user_signed_in? %>
