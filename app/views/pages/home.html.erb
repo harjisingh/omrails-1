@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
 <div class="hero-unit">
-<h2>Welcome <%= current_user.name %></h2>
+<h2>Welcome <%= current_user.category %> <%= current_user.name %></h2>
 
 <% if current_user.pins.any? %>
 <p>Here are your current ideas:</p>

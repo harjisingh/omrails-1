@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130213220017) do
+ActiveRecord::Schema.define(:version => 20130214092310) do
 
   create_table "pins", :force => true do |t|
     t.string   "description"
@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(:version => 20130213220017) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.boolean  "needshacker"
+    t.boolean  "needshussler"
+    t.boolean  "needsdesigner"
   end
 
   add_index "pins", ["user_id"], :name => "index_pins_on_user_id"
@@ -40,8 +43,14 @@ ActiveRecord::Schema.define(:version => 20130213220017) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "name"
+    t.string   "category"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
+  add_index "users", ["category"], :name => "index_users_on_category"
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 

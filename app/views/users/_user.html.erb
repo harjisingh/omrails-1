@@ -1,7 +1,6 @@
-  <tr>
-    <td><%= user.id %></td>
-    <td><%= user.email %></td>
-    <td><%= user.created_at %></td>
-    <td><%= link_to 'Show', user %></td>
-    
-  </tr>
+<div class="box">
+<%= image_tag user.image(:large) %>
+<%= user.category %>
+<%= user.name %>
+<%= link_to 'Show', user %>
+</div>
