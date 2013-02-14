@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130214092310) do
+ActiveRecord::Schema.define(:version => 20130214120618) do
 
   create_table "pins", :force => true do |t|
     t.string   "description"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20130214092310) do
     t.boolean  "needshacker"
     t.boolean  "needshussler"
     t.boolean  "needsdesigner"
+    t.string   "title"
   end
 
   add_index "pins", ["user_id"], :name => "index_pins_on_user_id"

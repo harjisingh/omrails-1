@@ -1,5 +1,5 @@
 class Pin < ActiveRecord::Base
-  attr_accessible :description, :image, :needshussler, :needsdesigner, :needshacker
+  attr_accessible :description, :image, :needshussler, :needsdesigner, :needshacker, :title
   
 
   validates :description, presence: :true
@@ -9,6 +9,6 @@ class Pin < ActiveRecord::Base
   								size: { less_than: 5.megabytes }
 
   belongs_to :user
-  has_attached_file :image, styles: { large: "640x480>"}
+  has_attached_file :image, styles: { large: "800x600>"}
   
 end

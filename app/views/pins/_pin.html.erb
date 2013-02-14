@@ -1,15 +1,25 @@
 <div class="box">
-              <%= image_tag pin.image %>
-              <%= link_to pin.description, pin %>
-              <% if current_user == pin.user %>
+              <%= image_tag pin.image(:large) %>
+              <h5><%= link_to pin.title, pin %>
+                <small><% if current_user == pin.user %>
               by <%= link_to pin.user.name, root_path %>
               <% else %>
               by <%= link_to pin.user.name, pin.user %>
               <% end %>
-              <% if current_user == pin.user %>
-              <%# link_to 'Edit', edit_pin_path(pin), class: "btn btn-info" %>
-
-             <%# link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+            </small></h5>
+            <p><%= pin.description %></p>
+              <div>Needs a:
+              <% if pin.needshacker == true %>
+              
+              <button class="btn btn-info btn-mini" type="button">Hacker </button>
               <% end %>
+              <% if pin.needshussler == true %>
+              <button class="btn btn-info btn-mini" type="button">Hussler </button>
+              <% end %>
+              <% if pin.needsdesigner == true %>
+              <button class="btn btn-info btn-mini" type="button">Designer </button>
+              <% end %>
+            </div>
+              
 </div>
             
