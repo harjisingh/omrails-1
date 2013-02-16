@@ -1,47 +1,29 @@
+ <div class="divPanel topArea notop nobottom">
+            <div class="row-fluid">
+                <div class="span5">
 
+                    <div id="divLogo">
+                        <a href="index.html" id="divSiteTitle">Three cogs</a><br />
+                        <a href="index.html" id="divTagLine">Hack|Hussle|Design</a>
+                    </div>
 
-    <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-    <div class="container">
-     
-    <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    </a>
-     
-    <!-- Be sure to leave the brand out there if you want it shown -->
-    <%= link_to "Three Cogs", root_path, class: "brand" %>
-     
-    <!-- Everything you want hidden at 940px or less, place within here -->
+                </div>
+                <div class="span7">
 
+                    <div id="divMenuRight" class="pull-right">
+                    <div class="navbar">
+                        <button type="button" class="btn btn-navbar-highlight btn-large btn-primary" data-toggle="collapse" data-target=".nav-collapse">
+                            NAVIGATION <span class="icon-chevron-down icon-white"></span>
+                        </button>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav nav-pills ddmenu">
+                                <li class="dropdown active"><a href="index.html">Login</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
 
-    <div class="nav-collapse collapse">
-    	<ul class="nav">
-            <% if user_signed_in? %>
-    		<li><%= link_to '<i class="icon-home"></i> My Profile'.html_safe, root_path %></li>
-          
-                
-             
-            <% end %>
-            <li><%= link_to '<i class="icon-user"></i> All Cogs'.html_safe, users_path %></li>
-            <li><%= link_to '<i class="icon-star"></i> All Ideas'.html_safe, pins_path %></li>
-		</ul>
-		<ul class="nav pull-right">
-            <% if user_signed_in? %>
-            <li><%= link_to '<i class="icon-edit"></i> Edit Profile'.html_safe, edit_user_registration_path %></li>
-            <li><%= link_to '<i class="icon-off"></i> Logout'.html_safe, destroy_user_session_path, method: :delete %></li>
-            
-            <% else %>
-    		<li><%= link_to '<i class="icon-user"></i> Login'.html_safe, new_user_session_path %></li>
-            <% end %>
-
-    		
-		</ul>
-    <!-- .nav, .navbar-search, .navbar-form, etc -->
-    </div>
-     
-    </div>
-    </div>
-    </div>
+                </div>
+            </div>
+        </div>

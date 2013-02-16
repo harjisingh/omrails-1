@@ -1,0 +1,44 @@
+<% if user_signed_in? %>
+<div class="hero-unit">
+<h2>Welcome <%= current_user.category %> <%= current_user.name %></h2>
+
+<% if current_user.pins.any? %>
+<p>Here are your current ideas:</p>
+              
+<table class="table">
+  <thead>
+  <tr>
+    <th>Idea</th>
+    <th>Options</th>
+   
+  </tr>
+</thead><tbody>
+<% current_user.pins.each do |pin| %>
+
+	<tr>
+<td><%= link_to pin.description, pin, class: "lead" %></td>
+	<td class="inline"><%= link_to 'Edit', edit_pin_path(pin), class: "btn btn-info" %> <%= link_to 'Delete', pin, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn" %></td>
+		
+		</tr>
+
+<% end %></tbody>
+</table>
+<% else %>
+<p>We bet you have plenty of ideas! Add one now!</p>
+<% end %>
+<%= link_to 'New Idea', new_pin_path, class: "btn btn-primary btn-large" %>
+</div>
+
+
+<% else %>
+<div class="hero-unit">
+<h1>Welcome to Three Cogs!</h1>
+<p>
+	You found the home page for the
+	<%= link_to "One Month Rails", "http://onemonthrails.com" %> application
+</p>
+<p><%= link_to 'Sign Up <i class="icon-cog icon-white"></i>'.html_safe, new_user_registration_path, class: "btn btn-primary btn-large" %></p>
+</div>
+
+
+<% end %>

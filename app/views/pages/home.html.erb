@@ -1,44 +1,92 @@
-<% if user_signed_in? %>
-<div class="hero-unit">
-<h2>Welcome <%= current_user.category %> <%= current_user.name %></h2>
+<div id="decorative1" style="position:relative">
+    <div class="container">
 
-<% if current_user.pins.any? %>
-<p>Here are your current ideas:</p>
-              
-<table class="table">
-  <thead>
-  <tr>
-    <th>Idea</th>
-    <th>Options</th>
-   
-  </tr>
-</thead><tbody>
-<% current_user.pins.each do |pin| %>
+        <div class="divPanel headerArea">
+            <div class="row-fluid">
+                <div class="span12">
 
-	<tr>
-<td><%= link_to pin.description, pin, class: "lead" %></td>
-	<td class="inline"><%= link_to 'Edit', edit_pin_path(pin), class: "btn btn-info" %> <%= link_to 'Delete', pin, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn" %></td>
-		
-		</tr>
+                    <div id="headerSeparator"></div>
 
-<% end %></tbody>
-</table>
-<% else %>
-<p>We bet you have plenty of ideas! Add one now!</p>
-<% end %>
-<%= link_to 'New Idea', new_pin_path, class: "btn btn-primary btn-large" %>
+                    <div class="row-fluid">
+                        <div class="span6">
+
+                            <div id="divHeaderText" class="page-content">
+                                <div id="divHeaderLine1">Have a great idea?</div><br />
+                                <div id="divHeaderLine2">Find the perfect co-founder</div><br />
+                                <div id="divHeaderLine3"><a class="btn btn-primary" href="#">Sign Up Now</a></div>
+                            </div>
+
+                        </div>
+                        <div class="span6">
+
+                            <article id="divVideo" class="flex-video">
+                                <iframe width="560" height="315" src="http://www.youtube.com/embed/eWyZUszyJHg" frameborder="0" allowfullscreen></iframe>
+                            </article>        
+
+                        </div>
+                    </div>
+
+                    <div id="headerSeparator2"></div>
+          
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
 
+<div id="contentOuterSeparator"></div>
 
-<% else %>
-<div class="hero-unit">
-<h1>Welcome to Three Cogs!</h1>
-<p>
-	You found the home page for the
-	<%= link_to "One Month Rails", "http://onemonthrails.com" %> application
-</p>
-<p><%= link_to 'Sign Up <i class="icon-cog icon-white"></i>'.html_safe, new_user_registration_path, class: "btn btn-primary btn-large" %></p>
+<div class="container">
+
+    <div class="divPanel page-content">
+
+        <div class="row-fluid">
+
+                <div class="span12" id="divMain">
+
+                    <h1>Welcome</h1>
+
+                    <p>Content on this page is for presentation purposes only. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+
+                    <br />
+
+                    <div class="row-fluid">
+                        <div class="span4">
+                            <h2>1/3 Column</h2>
+                            <img src="http://placehold.it/150x90/e7e7e7" class="img-polaroid" style="margin:5px 0px 15px;">                
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /><a href="#">Read More &raquo;</a></p>
+                        </div>
+                        <div class="span4">                
+                            <h2>1/3 Column</h2>
+                            <img src="http://placehold.it/150x90/e7e7e7" class="img-polaroid" style="margin:5px 0px 15px;">  
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /><a href="#">Read More &raquo;</a></p>
+                        </div>
+                        <div class="span4">                
+                            <h2>1/3 Column</h2>                
+                            <img src="http://placehold.it/150x90/e7e7e7" class="img-polaroid" style="margin:5px 0px 15px;">  
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /><a href="#">Read More &raquo;</a></p>
+                        </div>
+                    </div> 
+
+                    <hr style="margin:45px 0 35px" />
+
+                    <div class="lead">
+                        <h2>Lorem ipsum dolor sit amet.</h2> 
+                        <h3>Vivamus leo ante, consectetur sit amet vulputate vel, dapibus sit amet lectus.</h3>
+                    </div>
+                    <br />
+
+                    
+
+                </div>
+
+            </div>
+
+        <div id="footerInnerSeparator"></div>
+    </div>
+
 </div>
-
-
-<% end %>
