@@ -6,8 +6,10 @@ class PinsController < ApplicationController
   def index
     @search = Pin.search do
       fulltext params[:search]
+      order_by :created_at, :desc
     end
     @pins = @search.results
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @pins }

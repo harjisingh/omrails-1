@@ -1,9 +1,11 @@
 class Pin < ActiveRecord::Base
-  attr_accessible :description, :image, :needshussler, :needsdesigner, :needshacker, :title
+  attr_accessible :description, :image, :needshussler, :needsdesigner, :needshacker, :title, :created_at
 
   searchable do
+    time :created_at
   	text :title, :boost => 5
     text :description
+
   end
   
 
