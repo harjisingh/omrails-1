@@ -15,4 +15,6 @@ class User < ActiveRecord::Base
 
   has_many :pins
   has_attached_file :image, styles: { large: "640x480>"}
+
+  validates :category, presence: true
 end

@@ -1,3 +1,46 @@
+<% if user_signed_in? %>
+
+<div id="contentOuterSeparator"></div>
+
+<div class="container-fluid">
+
+
+        <div class="row-fluid">
+            <div class="span1"></div>
+
+                <div class="span3">
+
+                    <h3>Welcome <%= current_user.name %></h3>
+                    <h4>You are a <%= current_user.category %></h4>
+                    
+                    <%= link_to 'New Idea', new_pin_path, class: "btn btn-primary btn-large" %>
+
+                </div>
+                <div class="span8">
+                    <% if current_user.pins.any? %>
+                    <h3>Your ideas</h3>
+            </br>
+            <div id="pins">
+
+            <% current_user.pins.each do |pin| %>
+            <div class="box">
+                <%= image_tag pin.image(:large) %>
+
+    <%= link_to pin.title, pin, class: "lead" %>
+</br>
+<%= link_to 'Edit', edit_pin_path(pin), class: "btn btn-info btn-mini" %> <%= link_to 'Delete', pin, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-mini" %>
+</div>
+<% end %>
+<% end %>
+<h3>You currently have no ideas</h3>
+</div>
+
+</div>
+        <div id="footerInnerSeparator"></div>
+    </div>
+
+</div>
+<% else %>
 <div id="decorative1" style="position:relative">
     <div class="container">
 
@@ -13,7 +56,8 @@
                             <div id="divHeaderText" class="page-content">
                                 <div id="divHeaderLine1">Have a great idea?</div><br />
                                 <div id="divHeaderLine2">Find the perfect co-founder</div><br />
-                                <div id="divHeaderLine3"><a class="btn btn-primary" href="#">Sign Up Now</a></div>
+                                
+                                <div id="divHeaderLine3"><%= link_to 'Sign Up <i class="icon-cog icon-white"></i>'.html_safe, new_user_registration_path, class: "btn btn-primary" %></div>
                             </div>
 
                         </div>
@@ -90,3 +134,4 @@
     </div>
 
 </div>
+<% end %>

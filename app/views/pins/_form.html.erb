@@ -7,15 +7,13 @@
 
 <%= f.input :title %>
     <%= f.input :description, as: :text, input_html: { rows: "3"} %>
-    <div class="well">
-    <%= f.input :needshacker, as: :boolean, label: "Need a Hacker" %>
-    <%= f.input :needshussler, as: :boolean, label: "Need a Hussler" %>
-    <%= f.input :needsdesigner, as: :boolean, label: "Need a Designer" %>
-</div>
+    <p>Need a:</p>
+    <%= f.input :needshacker, as: :boolean, label: "Hacker" %>
+    <%= f.input :needshussler, as: :boolean, label: "Hussler" %>
+    <%= f.input :needsdesigner, as: :boolean, label: "Designer" %>
 
 
-  <div class="form-actions">
   	
     <%= f.button :submit, "Go!", class: "btn btn-primary" %>
-  </div>
+
 <% end %>

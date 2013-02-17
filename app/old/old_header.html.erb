@@ -21,9 +21,6 @@
     	<ul class="nav">
             <% if user_signed_in? %>
     		<li><%= link_to '<i class="icon-home"></i> My Profile'.html_safe, root_path %></li>
-          
-                
-             
             <% end %>
             <li><%= link_to '<i class="icon-user"></i> All Cogs'.html_safe, users_path %></li>
             <li><%= link_to '<i class="icon-star"></i> All Ideas'.html_safe, pins_path %></li>
