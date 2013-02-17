@@ -1,5 +1,10 @@
 class Pin < ActiveRecord::Base
   attr_accessible :description, :image, :needshussler, :needsdesigner, :needshacker, :title
+
+  searchable do
+  	text :title, :boost => 5
+    text :description
+  end
   
 
   validates :description, presence: :true

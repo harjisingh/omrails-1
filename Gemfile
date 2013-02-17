@@ -3,8 +3,12 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.9'
 gem 'jquery-rails'
 gem 'devise'
+gem 'sunspot_rails'
 gem 'simple_form'
 gem 'paperclip', "~> 3.0"
+
+    gem 'sunspot_solr'
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

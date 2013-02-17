@@ -7,6 +7,7 @@ def index
       format.json { render json: @users }
     end
   end
+  
 
   def show
     @user = User.find(params[:id])

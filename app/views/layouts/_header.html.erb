@@ -19,13 +19,25 @@
                             <ul class="nav nav-pills ddmenu">
              
                                  <% if user_signed_in? %>
+
+                                 <li><%= form_tag pins_path, :method => :get do %>
+<form class="form-search">
+    <%= text_field_tag :search, params[:search], placeholder: "Search for any Idea", class: "input-large search-query mainsearch" %></form>
+
+<% end %></li>
+                                 
             <li class="dropdown active"><%= link_to 'Profile'.html_safe, edit_user_registration_path %></li>
             <li class="dropdown active"><%= link_to 'Logout'.html_safe, destroy_user_session_path, method: :delete %></li>
-            <li class="dropdown active"><%= link_to 'Cogs'.html_safe, users_path %></li>
             <li class="dropdown active"><%= link_to 'Ideas'.html_safe, pins_path %></li>
+             
 
             
             <% else %>
+            <li><%= form_tag pins_path, :method => :get do %>
+<form class="form-search">
+    <%= text_field_tag :search, params[:search], placeholder: "Search for any Idea", class: "input-large search-query mainsearch" %></form>
+
+<% end %></li>
             <li class="dropdown active"><%= link_to 'Login'.html_safe, new_user_session_path %></li>
             <% end %>
                          
